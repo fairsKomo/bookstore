@@ -9,6 +9,14 @@ module.exports = {
           100:'#E2E2D5',
           200:'#888883',
         }
+      },
+      gridTemplateRows: {
+        // Simple 8 row grid
+       'komo': '70px 1fr 70px',
+      },
+      gridTemplateColumns: {
+        // Simple 8 row grid
+       'komo': '70px 150px 50px 1fr',
       }
     },
   },
