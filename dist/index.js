@@ -21,36 +21,42 @@ burger.addEventListener('click', () =>{
     }
 })
 
-let listProductHTML = document.querySelector('#listProduct');
-let listProduct = [];
+// let listProductHTML = document.getElementById('listProduct');
+// let listProduct = [];
 
 export let cart = [];
 const listCartHTML = document.getElementById('listCarte');
 
 
-const addDataToHTML = () => {
-    listProductHTML.innerHTML = '';
-    if(listProduct.length > 0){
-        listProduct.forEach(product => {
-            let newProduct = document.createElement('div');
-            newProduct.classList.add('card');
-            newProduct.dataset.id = product.id;
-            newProduct.innerHTML = `
-                <img src="${product.image}" alt="" class="image">
-                <div class="m-4">
-                    <span class="font-bold">${product.name}</span>
-                    <span class="block text-gray-500 text-sm">By Someone</span>
-                    <div class="flex justify-between">
-                        <span class="text-green-500 font-bold">${product.price}$</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 cursor-pointer hover:text-primary addToCart">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>   
-                    </div>                           
-                </div>`;
-                listProductHTML.appendChild(newProduct);
-        });
-    }
-};
+// const addDataToHTML = () => {
+//     fetch('books.php')
+//     .then(response => response.json())
+//     .then(books => {
+//         listProductHTML.innerHTML = ''; // Clear existing entries
+//         if (books.length > 0) {
+//             books.forEach(book => {
+//                 let newProduct = document.createElement('div');
+//                 newProduct.classList.add('card');
+//                 newProduct.innerHTML = `
+//                     <img src="${book.image_path}" alt="" class="image">
+//                     <div class="m-4">
+//                         <span class="font-bold">${book.title}</span>
+//                         <span class="block text-gray-500 text-sm">By ${book.author}</span>
+//                         <div class="flex justify-between">
+//                             <span class="text-green-500 font-bold">$${book.price}</span>
+//                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 cursor-pointer hover:text-primary addToCart">
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+//                             </svg>
+//                         </div>
+//                     </div>`;
+//                 listProductHTML.appendChild(newProduct);
+//             });
+//         } else {
+//             listProductHTML.innerHTML = "<p>No books found.</p>";
+//         }
+//     })
+//     .catch(error => console.error('Error fetching books:', error));
+// };
 
 listProductHTML.addEventListener('click', (event) => {
     let postionClick = event.target;
@@ -143,12 +149,13 @@ const changeQuantity = (prod_id, type) => {
     addCartToHTML();
 }
 
-const initApp = () => {
-    fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        listProduct = data;
-        addDataToHTML();
-    })
-}
-initApp();
+// const initApp = () => {
+//     fetch('books.php')
+//     .then(response => response.json())
+//     .then(data => {
+//         listProduct = data;
+//         addDataToHTML();
+//     })
+// }
+// initApp();
+// addDataToHTML();

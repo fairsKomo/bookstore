@@ -1,0 +1,5 @@
+I am working on a simple system which is a bookstore system.
+In the System I have to credintails: 1- Admin 2- User.
+User can explore the availble books and add them to his cart.
+Admin can explore the sales and users and see some statistics.
+What are the neccesary database tables I sholud create? Maximum 4 tables only
